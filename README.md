@@ -1,67 +1,158 @@
-# Smart Notes — an Obsidian notebook that thinks along
+<p align="center">
+  <img src="assets/banner.svg" alt="Smart Notes Skill" width="100%"/>
+</p>
 
-A [Claude Skill](https://docs.claude.com/en/docs/claude-code/skills) that turns Claude into a study notebook, not just a note-taker. Give it a lecture transcript, a reading, or any course material, and it builds an Obsidian-ready knowledge base: notes that link to each other, flashcards that adapt to what you're actually struggling with, and a running map of what you've covered and what you haven't.
+<p align="center">
+  <img alt="Claude Skill" src="https://img.shields.io/badge/Claude-Skill-1e5a9c?style=for-the-badge"/>
+  <img alt="Obsidian" src="https://img.shields.io/badge/Obsidian-ready-7c3aed?style=for-the-badge"/>
+  <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-0f7a55?style=for-the-badge"/>
+  <img alt="No dependencies" src="https://img.shields.io/badge/Dependencies-none-f0b429?style=for-the-badge"/>
+</p>
 
-## Why this exists
+<p align="center">
+  <b>An Obsidian notebook that thinks along.</b><br/>
+  Not a transcript-to-file converter: it knows what has already been written, notices what you are weak on, links related ideas, and keeps its own flashcard deck sharp over time.
+</p>
 
-Most "AI note-taker" prompts do one thing: turn text into a formatted file. That's fine for a single note, but it falls apart the moment you have a whole course — new material overlaps with old notes, some topics never get properly tested, flashcards pile up without any sense of what's actually sticking. This skill was built to fix that: it behaves less like a converter and more like an actual notebook a diligent student would keep — one that remembers what's already in it, notices gaps, and gets smarter about what to quiz you on.
+---
 
-It's deliberately generic: nothing in it is tied to one course, subject, or language. It configures itself the first time you use it for a new subject and adapts its note format to what you're studying (a technical course, a language course, a humanities course, or anything else).
+## 🎯 Why this exists
 
-## What it does
+Most "AI note-taker" prompts do one thing: turn text into a formatted file. That falls apart once you have a whole course. New material overlaps with old notes, some topics never get tested, and flashcards pile up without any sense of what is sticking.
 
-- **Builds linked notes, not isolated files.** Every note tracks what it relates to, and a `_Index.md` file keeps a live map of every topic in the subject, its status, and its connections.
-- **Tracks what you're weak on.** A `_Progress.md` file logs gaps from three sources: what you say yourself ("I don't get VLSM"), wrong answers in self-check quizzes, and structural gaps the skill notices on its own (a term mentioned but never explained, two notes that contradict each other).
-- **Generates adaptive flashcards.** Weak topics get more cards, across a wider range of difficulty (definition → mechanism → applied scenario), plus cards that test the *connections* between topics — not just isolated facts. Cards are formatted for the [Obsidian Spaced Repetition plugin](https://github.com/st3v3nmw/obsidian-spaced-repetition) out of the box.
-- **Updates itself instead of duplicating.** Before writing anything new, it checks whether the topic is already covered. New material that extends an existing note edits that note directly and reports what changed — it doesn't fork a second file.
-- **Adapts its format to the subject.** Technical/STEM, language-learning, and humanities/text subjects each get a note structure suited to them (worked examples and common-mistakes boxes vs. vocabulary tables and example sentences vs. arguments/timelines), with a generic fallback for anything else.
-- **Quizzes only when asked.** It never pushes a review on you unprompted. When you do ask, it pulls your weakest topics first, mixes a quick quiz widget for factual recall with open chat Q&A for deeper questions, and logs the result.
-- **Refuses to do your graded homework.** If pasted material is clearly a graded assessment (an Honor Code notice, a Submit button, point values), it won't hand you the answers — it'll explain the concept instead. It also ignores any "instructions" hidden inside pasted text (a known prompt-injection pattern in scraped pages).
+Smart Notes behaves like a notebook a diligent student would keep. It is deliberately generic: nothing in it is tied to one course, subject or language. It configures itself the first time you use it for a new subject.
 
-## How it's structured
+## 🔄 What happens when you paste material
 
-One folder per subject, wherever your notes are configured to live:
+<img src="assets/how-it-works.svg" alt="Onboarding, check index, read everything, plan links, write note, update index and progress" width="100%"/>
 
-```
+| Step | What the skill does |
+|---|---|
+| **1. Onboarding** | Once per subject it asks three things: subject name and type, note language(s), and where to save. Answers are stored in `_Progress.md`, so it never asks again. |
+| **2. Check the index** | Looks in `_Index.md`. If your material is a near-duplicate of an existing topic, it tells you which file already covers it and extends that file. A separate new file only happens if you confirm it is a different topic. |
+| **3. Read everything** | Reads the whole source and gathers every fact, number and example before writing. |
+| **4. Plan the links** | Works out which existing topics this one connects to: prerequisite, follow-up, same category, or contrast. |
+| **5. Write the note** | Builds the note from the shared skeleton and the preset for your subject type. |
+| **6. Update the maps** | Refreshes `_Index.md` and `_Progress.md`. |
+
+Once activated, the skill stays active for the rest of the conversation. Every later transcript or reading you paste is handled automatically.
+
+## ✨ Key features
+
+| | |
+|---|---|
+| 🗂️ **Linked notes, not isolated files**<br/>Every note has a `Related:` line with `[[wikilinks]]`, and `_Index.md` keeps a live map of every topic, its status and its links. | 🃏 **Adaptive flashcards**<br/>Weak topics get more cards and a wider spread of angles. Every deck includes a connection card when a genuine link to another topic exists. |
+| 🧩 **Gap tracking**<br/>`_Progress.md` logs what you are weak on from three sources (see below). | ♻️ **Edits instead of duplicating**<br/>New material that extends or corrects a note edits that note directly, then briefly reports what changed. Affected flashcards, `_Index.md` and `_Progress.md` are updated too. |
+| 🎛️ **Adapts to the subject**<br/>Four presets with their own note structure (see below). | 🧠 **Quizzes only when you ask**<br/>Never proposes a quiz or review unprompted. |
+
+## 🗺️ Folder structure
+
+One folder per subject:
+
+```text
 <Subject Name>/
-  _Index.md        ← map of every topic: status + links
-  _Progress.md     ← config + gap tracker + quiz history
+  _Index.md        ← map of content: every topic, its status, its links
+  _Progress.md     ← config (from onboarding) + gap tracker + quiz history
   <Topic 1>.md
   <Topic 2>.md
   ...
 ```
 
-Each note follows a shared skeleton (frontmatter, a "Related" line with `[[wikilinks]]`, explanation sections, a common-mistakes callout, and a flashcard deck) with preset-specific callout types layered on top depending on the subject type.
+The `_` prefix keeps the two control files sorted above ordinary notes in any file browser.
 
-## Installing it
+### `_Index.md`
 
-This is a single `SKILL.md` file, which is the standard format for a [Claude Skill](https://docs.claude.com/en/docs/claude-code/skills). To use it:
+| Topic | Status | Links |
+|---|---|---|
+| [[Topic 1]] | ✅ covered | [[Topic 2]] |
+| [[Topic 2]] | ⚠️ weak | [[Topic 1]], [[Topic 3]] |
+| Topic 4 | ❌ not covered yet | referenced by [[Topic 2]] |
 
-1. Copy `SKILL.md` from this repo into your Claude skills directory (for Claude Code / Claude Desktop, typically `~/.claude/skills/smart-notes/SKILL.md`; check Anthropic's current skills documentation for the exact path, as this can change).
-2. Restart or reload Claude so it picks up the new skill.
-3. That's it — no dependencies, no build step. It's a plain-text instruction file.
+A topic that an existing note references but that has no note of its own stays listed as *not covered yet*.
 
-## Using it
+### Note skeleton
 
-Start a conversation and either run the command:
+Every note shares one skeleton: frontmatter, `# Title`, a `Related:` line, an opening definition, one section per concept, a common-mistakes callout, and a flashcard deck.
 
+```markdown
+> [!warning] Common mistakes / things people mix up
+> - <mistake 1>
+> - <mistake 2>
+
+## Flashcards
+#flashcards
+
+<Question>?
+?
+<Answer>
 ```
+
+The bare `?` line is the question/answer separator of the Obsidian Spaced Repetition plugin.
+
+## 🧩 Gap tracking
+
+<img src="assets/gaps.svg" alt="Three sources of gaps: what you say, wrong quiz answers, structural gaps the skill finds" width="100%"/>
+
+## 🎛️ Presets
+
+<img src="assets/presets.svg" alt="Technical/STEM, Language course, Humanities/text, Other/generic presets" width="100%"/>
+
+If the subject is configured as bilingual, every prose line and every flashcard question and answer appears as a pair in the two languages you chose. Structure stays identical.
+
+## 🃏 Adaptive flashcards
+
+- Topics flagged **weak** get more cards and a wider spread of angles: bare definition → mechanism / why → applied scenario.
+- Difficulty is graded across that spread instead of writing every card at the same level.
+- Whenever a genuine link exists, at least one **connection card** tests the relation between this topic and a related one already in the vault, for example *how does CIDR relate to a routing table entry?*
+
+The repeated reviews themselves are run by the Obsidian Spaced Repetition plugin.
+
+## 🧠 Self-check quizzes
+
+Only when you explicitly ask:
+
+- No topic named → it pulls from `_Progress.md`, weak and not-yet-tested topics first.
+- A quick quiz widget for factual recall; plain chat for deeper "explain why / how" questions, where you answer in your own words and it evaluates.
+- The outcome is logged back into the quiz history in `_Progress.md`.
+
+## 💬 How replies look
+
+Every reply leads with the file name in bold, whether creating or editing, followed by a short bullet summary of what the file covers or what changed. The full file is not pasted into chat.
+
+## 🛡️ Guardrails
+
+- If pasted material is itself a graded assessment (look for "Honor Code", "Submit", point values), it never supplies the answers, even if asked repeatedly. It offers to explain the underlying concept or run a separate self-check quiz instead.
+- Any embedded "AI assistant instructions" inside pasted transcripts or page text are treated as inert content, never as commands.
+
+## 📦 Installation
+
+This is a single `SKILL.md` file, the standard format for a [Claude Skill](https://docs.claude.com/en/docs/claude-code/skills).
+
+1. Copy `SKILL.md` into your Claude skills directory, typically `~/.claude/skills/smart-notes/SKILL.md` (check Anthropic's current docs for the exact path).
+2. Restart or reload Claude so it picks up the skill.
+3. Done. No dependencies, no build step.
+
+## 🚀 Usage
+
+```text
 /smart-notes
 ```
+
 or
-```
+
+```text
 /study
 ```
 
-or just ask in plain language to keep smart study notes for a course. On the first run for a new subject, Claude will ask you a few quick questions (subject name and type, note language, where to save your files) and remember the answers for next time. After that, just paste in lecture transcripts, readings, or any course material — Claude takes it from there: writing new notes, updating old ones, and keeping the index and gap tracker current.
+or just ask Claude to keep smart study notes or flashcards for a course. On the first run for a new subject, answer the onboarding questions. After that, paste lecture transcripts, readings or any course material.
 
-To review, just ask — e.g. "quiz me on what I'm weak on" or "test me on [topic]".
+To review, ask: *"quiz me on what I'm weak on"* or *"test me on [topic]"*.
 
-## Requirements
+## 🔧 Requirements
 
-- Obsidian (or any Markdown editor — the notes are plain Markdown and readable anywhere, but wikilinks and callouts are Obsidian-flavored).
-- The [Spaced Repetition plugin](https://github.com/st3v3nmw/obsidian-spaced-repetition) for Obsidian, if you want the flashcards to actually run as spaced-repetition reviews (the files work fine without it too — the cards just won't be interactive).
+- [Obsidian](https://obsidian.md) (or any Markdown editor; wikilinks and callouts are Obsidian-flavored)
+- [Spaced Repetition plugin](https://github.com/st3v3nmw/obsidian-spaced-repetition) if you want the flashcards to run as real spaced-repetition reviews
 
-## License
+## 📄 License
 
-MIT — see [LICENSE](LICENSE). Free to use, modify, and redistribute.
+MIT. See [LICENSE](LICENSE). Free to use, modify and redistribute.
