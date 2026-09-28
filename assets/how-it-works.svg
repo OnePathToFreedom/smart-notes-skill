@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="ar" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M2 1.5 L8 5 L2 8.5" fill="none" stroke="#8aa4c4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="300" rx="24" fill="#0b1f3a"/>
+
+  <g text-anchor="middle">
+    <rect x="30" y="50" width="164" height="200" rx="16" fill="#12305c"/>
+    <circle cx="112" cy="88" r="20" fill="#1e5a9c"/><text x="112" y="96" font-size="20" font-weight="700" fill="#fff">1</text>
+    <text x="112" y="140" font-size="20" font-weight="600" fill="#6fb1ff">Onboarding</text>
+    <text x="112" y="172" font-size="15" fill="#b8c9de">type · language</text>
+    <text x="112" y="194" font-size="15" fill="#b8c9de">· save location</text>
+    <text x="112" y="224" font-size="14" font-style="italic" fill="#8aa4c4">once per subject</text>
+
+    <rect x="216" y="50" width="164" height="200" rx="16" fill="#12305c"/>
+    <circle cx="298" cy="88" r="20" fill="#1e5a9c"/><text x="298" y="96" font-size="20" font-weight="700" fill="#fff">2</text>
+    <text x="298" y="140" font-size="20" font-weight="600" fill="#6fb1ff">Check index</text>
+    <text x="298" y="172" font-size="15" fill="#b8c9de">already covered?</text>
+    <text x="298" y="194" font-size="15" fill="#b8c9de">extend, don't fork</text>
+
+    <rect x="402" y="50" width="164" height="200" rx="16" fill="#12305c"/>
+    <circle cx="484" cy="88" r="20" fill="#1e5a9c"/><text x="484" y="96" font-size="20" font-weight="700" fill="#fff">3</text>
+    <text x="484" y="140" font-size="20" font-weight="600" fill="#6fb1ff">Read it all</text>
+    <text x="484" y="172" font-size="15" fill="#b8c9de">whole source first,</text>
+    <text x="484" y="194" font-size="15" fill="#b8c9de">then write</text>
+
+    <rect x="588" y="50" width="164" height="200" rx="16" fill="#12305c"/>
+    <circle cx="670" cy="88" r="20" fill="#1e5a9c"/><text x="670" y="96" font-size="20" font-weight="700" fill="#fff">4</text>
+    <text x="670" y="140" font-size="20" font-weight="600" fill="#6fb1ff">Plan links</text>
+    <text x="670" y="172" font-size="15" fill="#b8c9de">prerequisite ·</text>
+    <text x="670" y="194" font-size="15" fill="#b8c9de">follow-up · contrast</text>
+
+    <rect x="774" y="50" width="164" height="200" rx="16" fill="#12305c"/>
+    <circle cx="856" cy="88" r="20" fill="#1e5a9c"/><text x="856" y="96" font-size="20" font-weight="700" fill="#fff">5</text>
+    <text x="856" y="140" font-size="20" font-weight="600" fill="#6fb1ff">Write note</text>
+    <text x="856" y="172" font-size="15" fill="#b8c9de">sections, mistakes</text>
+    <text x="856" y="194" font-size="15" fill="#b8c9de">block, flashcards</text>
+
+    <rect x="960" y="50" width="210" height="200" rx="16" fill="#0f4d3a"/>
+    <circle cx="1065" cy="88" r="20" fill="#0f7a55"/><text x="1065" y="96" font-size="20" font-weight="700" fill="#fff">6</text>
+    <text x="1065" y="140" font-size="20" font-weight="600" fill="#5be3a8">Update maps</text>
+    <text x="1065" y="172" font-size="15" fill="#b8c9de">_Index.md and</text>
+    <text x="1065" y="194" font-size="15" fill="#b8c9de">_Progress.md</text>
+  </g>
+
+  <line x1="196" y1="150" x2="212" y2="150" stroke="#8aa4c4" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="382" y1="150" x2="398" y2="150" stroke="#8aa4c4" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="568" y1="150" x2="584" y2="150" stroke="#8aa4c4" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="754" y1="150" x2="770" y2="150" stroke="#8aa4c4" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="940" y1="150" x2="956" y2="150" stroke="#8aa4c4" stroke-width="2" marker-end="url(#ar)"/>
+</svg>

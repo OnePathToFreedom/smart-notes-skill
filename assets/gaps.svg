@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 330" width="1200" height="330" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect width="1200" height="330" rx="24" fill="#141414"/>
+  <text x="600" y="52" text-anchor="middle" font-size="26" font-weight="700" fill="#ffffff">Three sources feed the gap tracker in _Progress.md</text>
+
+  <g>
+    <rect x="40" y="86" width="350" height="200" rx="18" fill="#1b2a41"/>
+    <circle cx="82" cy="126" r="20" fill="#1e5a9c"/><text x="82" y="134" text-anchor="middle" font-size="20" font-weight="700" fill="#fff">1</text>
+    <text x="114" y="134" font-size="22" font-weight="700" fill="#6fb1ff">You say so</text>
+    <text x="70" y="182" font-size="19" fill="#c9d6e6">Recorded in your own words:</text>
+    <text x="70" y="220" font-size="20" font-style="italic" fill="#ffffff">"I don't get VLSM"</text>
+  </g>
+  <g>
+    <rect x="425" y="86" width="350" height="200" rx="18" fill="#3a2f12"/>
+    <circle cx="467" cy="126" r="20" fill="#b7860b"/><text x="467" y="134" text-anchor="middle" font-size="20" font-weight="700" fill="#fff">2</text>
+    <text x="499" y="134" font-size="22" font-weight="700" fill="#f0b429">Quiz answer is wrong</text>
+    <text x="455" y="182" font-size="19" fill="#e6d9b8">Logged in quiz history with</text>
+    <text x="455" y="212" font-size="19" fill="#e6d9b8">what exactly was missed.</text>
+  </g>
+  <g>
+    <rect x="810" y="86" width="350" height="200" rx="18" fill="#12352a"/>
+    <circle cx="852" cy="126" r="20" fill="#0f7a55"/><text x="852" y="134" text-anchor="middle" font-size="20" font-weight="700" fill="#fff">3</text>
+    <text x="884" y="134" font-size="22" font-weight="700" fill="#5be3a8">Skill reads the vault</text>
+    <text x="840" y="182" font-size="19" fill="#c3e6d6">Term with no note · notes that</text>
+    <text x="840" y="212" font-size="19" fill="#c3e6d6">contradict · topic without</text>
+    <text x="840" y="242" font-size="19" fill="#c3e6d6">flashcards.</text>
+  </g>
+</svg>

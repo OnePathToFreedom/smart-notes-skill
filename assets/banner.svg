@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="1200" height="360">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1e5a9c"/>
+      <stop offset="1" stop-color="#0f7a55"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.06"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="360" rx="28" fill="url(#bg)"/>
+  <circle cx="1080" cy="40" r="150" fill="#ffffff" fill-opacity="0.06"/>
+  <circle cx="1140" cy="330" r="110" fill="#ffffff" fill-opacity="0.05"/>
+
+  <!-- stacked notes illustration -->
+  <g transform="translate(80,90)">
+    <rect x="30" y="20" width="150" height="180" rx="14" fill="#ffffff" fill-opacity="0.25" transform="rotate(-8 105 110)"/>
+    <rect x="20" y="10" width="150" height="180" rx="14" fill="#ffffff" fill-opacity="0.45" transform="rotate(-3 95 100)"/>
+    <rect x="10" y="0" width="150" height="180" rx="14" fill="#ffffff"/>
+    <rect x="30" y="28" width="80" height="10" rx="5" fill="#1e5a9c"/>
+    <rect x="30" y="54" width="110" height="7" rx="3.5" fill="#c5d3e3"/>
+    <rect x="30" y="72" width="100" height="7" rx="3.5" fill="#c5d3e3"/>
+    <rect x="30" y="90" width="110" height="7" rx="3.5" fill="#c5d3e3"/>
+    <rect x="30" y="118" width="46" height="24" rx="12" fill="#0f7a55"/>
+    <rect x="84" y="118" width="46" height="24" rx="12" fill="#f0b429"/>
+    <path d="M40 160 L62 152 L84 160 L106 146 L128 150" stroke="#1e5a9c" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <text x="300" y="150" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="64" font-weight="700" fill="#ffffff">Smart Notes Skill</text>
+  <text x="302" y="204" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="26" fill="#ffffff" fill-opacity="0.92">Adaptive learning that turns your course material into</text>
+  <text x="302" y="240" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="26" fill="#ffffff" fill-opacity="0.92">linked Obsidian notes and smart flashcards, powered by Claude</text>
+
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="18" font-weight="600" fill="#ffffff">
+    <rect x="302" y="272" width="150" height="38" rx="19" fill="url(#card)" stroke="#ffffff" stroke-opacity="0.4"/>
+    <text x="377" y="297" text-anchor="middle">Claude Skill</text>
+    <rect x="466" y="272" width="130" height="38" rx="19" fill="url(#card)" stroke="#ffffff" stroke-opacity="0.4"/>
+    <text x="531" y="297" text-anchor="middle">Obsidian</text>
+    <rect x="610" y="272" width="210" height="38" rx="19" fill="url(#card)" stroke="#ffffff" stroke-opacity="0.4"/>
+    <text x="715" y="297" text-anchor="middle">Spaced Repetition</text>
+    <rect x="834" y="272" width="100" height="38" rx="19" fill="url(#card)" stroke="#ffffff" stroke-opacity="0.4"/>
+    <text x="884" y="297" text-anchor="middle">MIT</text>
+  </g>
+</svg>

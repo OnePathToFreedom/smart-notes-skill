@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="1200" height="420" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect width="1200" height="420" rx="24" fill="#f5f7fa"/>
+
+  <g>
+    <rect x="30" y="30" width="270" height="360" rx="18" fill="#e4eefb"/>
+    <text x="52" y="76" font-size="24" font-weight="700" fill="#1e4f8c">Technical / STEM</text>
+    <text x="52" y="106" font-size="15" fill="#4a6684">(also the fallback for Other)</text>
+    <g font-size="16" fill="#1f2f44">
+      <text x="52" y="152">• [!note] definitions</text>
+      <text x="52" y="184">• [!example] worked example</text>
+      <text x="52" y="216">• [!warning] gotchas</text>
+      <text x="52" y="248">• [!tip] plain-language recap</text>
+      <text x="52" y="280">• Summary table for</text>
+      <text x="66" y="304">side-by-side comparisons</text>
+    </g>
+  </g>
+  <g>
+    <rect x="315" y="30" width="270" height="360" rx="18" fill="#fdf1d6"/>
+    <text x="337" y="76" font-size="24" font-weight="700" fill="#8a5a00">Language course</text>
+    <g font-size="16" fill="#3a2b0a">
+      <text x="337" y="152">• Vocabulary and</text>
+      <text x="351" y="176">conjugation tables</text>
+      <text x="337" y="208">• [!example] sentences</text>
+      <text x="351" y="232">in context</text>
+      <text x="337" y="264">• Pronunciation line when</text>
+      <text x="351" y="288">the script differs</text>
+      <text x="337" y="320">• Cards: word ⇄ translation</text>
+      <text x="351" y="344">+ one example sentence</text>
+    </g>
+  </g>
+  <g>
+    <rect x="600" y="30" width="270" height="360" rx="18" fill="#ece6f8"/>
+    <text x="622" y="76" font-size="24" font-weight="700" fill="#4b2f8a">Humanities / text</text>
+    <g font-size="16" fill="#241a3d">
+      <text x="622" y="152">• [!example] primary-source</text>
+      <text x="636" y="176">quotes, concrete cases</text>
+      <text x="622" y="208">• Arguments and</text>
+      <text x="636" y="232">counterarguments callout</text>
+      <text x="622" y="264">• Chronology / timeline</text>
+      <text x="636" y="288">block when order matters</text>
+      <text x="622" y="320">• Cards: claim → evidence,</text>
+      <text x="636" y="344">cause → effect</text>
+    </g>
+  </g>
+  <g>
+    <rect x="885" y="30" width="285" height="360" rx="18" fill="#e3f3ea"/>
+    <text x="907" y="76" font-size="24" font-weight="700" fill="#0d5c3f">Other / generic</text>
+    <g font-size="16" fill="#132f24">
+      <text x="907" y="152">• Base skeleton only</text>
+      <text x="907" y="184">• No extra callout types</text>
+      <text x="907" y="224" font-size="15" fill="#3f6653">For topics that don't fit</text>
+      <text x="907" y="246" font-size="15" fill="#3f6653">the three presets.</text>
+    </g>
+  </g>
+</svg>
