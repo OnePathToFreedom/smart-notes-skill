@@ -28,7 +28,7 @@ Smart Notes behaves like a notebook a diligent student would keep. It is deliber
 
 | Step | What the skill does |
 |---|---|
-| **1. Onboarding** | Once per subject it asks three things: subject name and type, note language(s), and where to save. Answers are stored in `_Progress.md`, so it never asks again. |
+| **1. Onboarding** | Once per subject it asks four things: subject name and type, note language(s), where to save, and whether to generate flashcards (on by default). Answers are stored in `_Progress.md`, so it never asks again. |
 | **2. Check the index** | Looks in `_Index.md`. If your material is a near-duplicate of an existing topic, it tells you which file already covers it and extends that file. A separate new file only happens if you confirm it is a different topic. |
 | **3. Read everything** | Reads the whole source and gathers every fact, number and example before writing. |
 | **4. Plan the links** | Works out which existing topics this one connects to: prerequisite, follow-up, same category, or contrast. |
@@ -41,7 +41,7 @@ Once activated, the skill stays active for the rest of the conversation. Every l
 
 | | |
 |---|---|
-| 🗂️ **Linked notes, not isolated files**<br/>Every note has a `Related:` line with `[[wikilinks]]`, and `_Index.md` keeps a live map of every topic, its status and its links. | 🃏 **Adaptive flashcards**<br/>Weak topics get more cards and a wider spread of angles. Every deck includes a connection card when a genuine link to another topic exists. |
+| 🗂️ **Linked notes, not isolated files**<br/>Every note has a `Related:` line with `[[wikilinks]]`, and `_Index.md` keeps a live map of every topic, its status and its links. | 🃏 **Adaptive flashcards (optional)**<br/>Can be switched on or off per subject at onboarding, or toggled later. When on, weak topics get more cards and a wider spread of angles, and every deck includes a connection card when a genuine link to another topic exists. |
 | 🧩 **Gap tracking**<br/>`_Progress.md` logs what you are weak on from three sources (see below). | 🛡️ **Edits that protect your own notes**<br/>New material that overlaps an existing note is merged in, not overwritten: manual edits and corrections are detected and kept, genuine conflicts are flagged instead of auto-resolved, and every change is reported as a diff. |
 | 🎛️ **Adapts to the subject**<br/>Four presets with their own note structure (see below). | 🧠 **Quizzes only when you ask**<br/>Never proposes a quiz or review unprompted. |
 
@@ -151,7 +151,7 @@ To review, ask: *"quiz me on what I'm weak on"* or *"test me on [topic]"*.
 ## 🔧 Requirements
 
 - [Obsidian](https://obsidian.md) (or any Markdown editor; wikilinks and callouts are Obsidian-flavored)
-- [Spaced Repetition plugin](https://github.com/st3v3nmw/obsidian-spaced-repetition) if you want the flashcards to run as real spaced-repetition reviews
+- [Spaced Repetition plugin](https://github.com/st3v3nmw/obsidian-spaced-repetition) only if flashcards are on and you want them to run as real spaced-repetition reviews
 
 ## 📄 License
 

@@ -18,8 +18,11 @@ Before writing anything for a subject/course that has no `_Index.md` yet, ask th
 1. **Subject/course name + type** — offer these types as options: `Technical/STEM`, `Language course`, `Humanities/text course` (history, law, literature, etc.), `Other/generic`. The type picks the preset (see below).
 2. **Note language(s)** — single language, or bilingual (and if bilingual, which two languages). Never assume bilingual by default.
 3. **Where to save** — default output folder, or (if a device bridge / connected computer is available in this session) directly into a real Obsidian vault path the person gives you.
+4. **Flashcards** — on or off for this subject. Default to **on** unless the person says otherwise.
 
 Save these answers into the config block at the top of `_Progress.md` (see template below) so you never have to ask again for this subject. On every later activation for the same subject, read that config silently instead of re-asking.
+
+To change the Flashcards setting for a subject later, update the `Flashcards` line in that subject's `_Progress.md` when the person asks (e.g. "turn off flashcards for this subject") — don't re-run the full onboarding. Switching it off doesn't retroactively strip flashcard sections from notes already written; only do that if the person separately asks for it.
 
 ## Folder & file structure
 
@@ -89,9 +92,13 @@ Related: [[Related Note 1]] · [[Related Note 2]]
 (blank line, next card, same shape — the bare `?` line is the Obsidian Spaced Repetition plugin's question/answer separator, never omit it)
 ```
 
+**If Flashcards is off for the subject**, drop the whole `## Flashcards` section and the `flashcards, review` tags from frontmatter — everything else in the skeleton stays the same.
+
 If the subject is configured bilingual, every prose line/paragraph and every flashcard question+answer appears as a RU/EN-style pair (language-agnostic: substitute whichever two languages were set at onboarding), same as a single-language note but doubled. Keep the frontmatter, headers, and structure identical either way — bilinguality only affects the prose, not the skeleton.
 
 ## Presets (pick by the subject's configured type)
+
+The flashcard-phrasing bullets below only apply when Flashcards is on for the subject; skip them otherwise.
 
 **Technical/STEM** (also the fallback for `Other/generic`):
 - `[!note]` for definitions and "why it's named that"
@@ -137,6 +144,7 @@ Update this file every time a note is created or edited: add/refresh the row, ke
 - Type: <technical|language|humanities|generic>
 - Note language(s): <...>
 - Save location: <...>
+- Flashcards: <on|off>
 
 ## Gaps
 
@@ -151,7 +159,7 @@ Update this file every time a note is created or edited: add/refresh the row, ke
 Write to this file from three sources, combined:
 1. **The user says so explicitly** ("I don't get VLSM") — record in their own words.
 2. **A self-check quiz answer is wrong** — record what specifically was missed.
-3. **Your own structural read of the vault** — a note references a term with no note of its own, two notes contradict each other, a topic in `_Index.md` has no flashcards yet. Flag these as gaps too.
+3. **Your own structural read of the vault** — a note references a term with no note of its own, two notes contradict each other, or (only when Flashcards is on for the subject) a topic in `_Index.md` has no flashcards yet. Flag these as gaps too.
 
 ## Editing existing notes
 
@@ -161,9 +169,11 @@ When new material extends or corrects an existing note:
 2. **Tell manual edits apart from skill-written text.** Anything that doesn't match the base template/preset skeleton — a paragraph in the student's own voice, a correction phrased differently from how you write, an extra flashcard, a callout type outside the preset's set, a comment — is presumed to be theirs and must survive the edit.
 3. **Merge by addition, not replacement**, wherever the section you're touching contains such content: add the new material alongside it rather than overwriting it. Deduplication (see "Before writing a new note" above) follows the same rule — extending a file must never fold away or quietly drop a passage that looks like the student's own.
 4. **On a genuine conflict** — the new material contradicts something the student themselves wrote, not just something you wrote earlier — don't resolve it silently. Show the conflicting lines and ask which should stand before touching the file.
-5. **Report the change as a diff, not just prose.** For any touched section, show a short fenced `diff` block of just the before/after lines (not the whole file) so the student can see nothing of theirs was removed. Also update that note's flashcards if the correction affects one, and update `_Index.md`/`_Progress.md` status accordingly.
+5. **Report the change as a diff, not just prose.** For any touched section, show a short fenced `diff` block of just the before/after lines (not the whole file) so the student can see nothing of theirs was removed. Also update that note's flashcards if the correction affects one and Flashcards is on for the subject, and update `_Index.md`/`_Progress.md` status accordingly.
 
 ## Adaptive flashcards
+
+Skip this whole section when Flashcards is off for the subject.
 
 When writing or refreshing a note's flashcard deck:
 - Topics flagged **weak** in `_Progress.md` get more cards and a wider spread of angles (bare definition → mechanism/why → applied scenario) than solid topics.
@@ -174,7 +184,7 @@ When writing or refreshing a note's flashcard deck:
 
 Never propose a quiz or review unprompted, at the end of a note, or at the start of a session — only run one when the user explicitly asks. When asked:
 - If they didn't name a topic, pull from `_Progress.md`'s weak/not-yet-tested topics first.
-- Use a quick quiz widget for factual recall questions; use plain back-and-forth chat text (the user answers in their own words, you evaluate) for deeper "explain why/how" questions.
+- Use a quick quiz widget for factual recall questions; use plain back-and-forth chat text (the user answers in their own words, you evaluate) for deeper "explain why/how" questions. When Flashcards is off for the subject, there's no deck to draw from — generate quiz questions fresh from the note content instead.
 - Log the outcome back into `_Progress.md`'s quiz history when done.
 
 ## Replying
