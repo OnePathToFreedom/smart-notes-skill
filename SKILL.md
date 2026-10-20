@@ -155,7 +155,13 @@ Write to this file from three sources, combined:
 
 ## Editing existing notes
 
-When new material extends or corrects an existing note: edit it directly (don't ask first), then briefly report what changed. Also update that note's flashcards if the correction affects one, and update `_Index.md`/`_Progress.md` status accordingly.
+When new material extends or corrects an existing note:
+
+1. **Re-read the file from disk first.** Never edit from memory of what you wrote earlier in the session — the student may have hand-edited it since.
+2. **Tell manual edits apart from skill-written text.** Anything that doesn't match the base template/preset skeleton — a paragraph in the student's own voice, a correction phrased differently from how you write, an extra flashcard, a callout type outside the preset's set, a comment — is presumed to be theirs and must survive the edit.
+3. **Merge by addition, not replacement**, wherever the section you're touching contains such content: add the new material alongside it rather than overwriting it. Deduplication (see "Before writing a new note" above) follows the same rule — extending a file must never fold away or quietly drop a passage that looks like the student's own.
+4. **On a genuine conflict** — the new material contradicts something the student themselves wrote, not just something you wrote earlier — don't resolve it silently. Show the conflicting lines and ask which should stand before touching the file.
+5. **Report the change as a diff, not just prose.** For any touched section, show a short fenced `diff` block of just the before/after lines (not the whole file) so the student can see nothing of theirs was removed. Also update that note's flashcards if the correction affects one, and update `_Index.md`/`_Progress.md` status accordingly.
 
 ## Adaptive flashcards
 
