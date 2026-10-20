@@ -42,7 +42,7 @@ Once activated, the skill stays active for the rest of the conversation. Every l
 | | |
 |---|---|
 | 🗂️ **Linked notes, not isolated files**<br/>Every note has a `Related:` line with `[[wikilinks]]`, and `_Index.md` keeps a live map of every topic, its status and its links. | 🃏 **Adaptive flashcards**<br/>Weak topics get more cards and a wider spread of angles. Every deck includes a connection card when a genuine link to another topic exists. |
-| 🧩 **Gap tracking**<br/>`_Progress.md` logs what you are weak on from three sources (see below). | ♻️ **Edits instead of duplicating**<br/>New material that extends or corrects a note edits that note directly, then briefly reports what changed. Affected flashcards, `_Index.md` and `_Progress.md` are updated too. |
+| 🧩 **Gap tracking**<br/>`_Progress.md` logs what you are weak on from three sources (see below). | 🛡️ **Edits that protect your own notes**<br/>New material that overlaps an existing note is merged in, not overwritten: manual edits and corrections are detected and kept, genuine conflicts are flagged instead of auto-resolved, and every change is reported as a diff. |
 | 🎛️ **Adapts to the subject**<br/>Four presets with their own note structure (see below). | 🧠 **Quizzes only when you ask**<br/>Never proposes a quiz or review unprompted. |
 
 ## 🗺️ Folder structure
